@@ -1,0 +1,64 @@
+/* style2.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://images.unsplash.com/photo-1561905199-e7adfe8aa7d1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  overflow: hidden;
+  position: relative;
+}
+
+.clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 160px #00ffff;
+  animation: neon-glow 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.clock p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.clock #date {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff, 0 0 100px #00ffff, 0 0 150px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 35px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 75px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff, 0 0 100px #00ffff, 0 0 150px #00ffff;
+  }
+}
+
+.hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(0, 255, 255, 0.2), transparent 200px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body:hover .hover-effect {
+  opacity: 1;
+}
